@@ -37,7 +37,7 @@
   border: 2px solid var(--accent-color);
   margin: 0 auto;
   background-color: var(--background-color);
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   margin-bottom: 100px;
 }
 
@@ -131,6 +131,9 @@
   width: clamp(23.438rem, 16.2859rem + 30.5157vw, 43.75rem);
   margin: 0 auto;
   background-color: var(--background-color);
+}
+
+.content__block {
   border: 2px solid var(--accent-color);
 }
 
@@ -138,11 +141,12 @@
   padding: 3px 10px 3px 10px;
   font-size: 18px;
   line-height: 21.78px;
-  border-bottom: 2px solid var(--accent-color);
 }
 
 .content__image {
   position: relative;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .decorate__text {
@@ -187,7 +191,6 @@
 
 .buttons {
   display: flex;
-  gap: 10px;
   align-items: center;
   justify-content: flex-end;
   padding: 0 25px 25px 0;
@@ -337,14 +340,60 @@
 }
 
 .floppyDialog {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: fixed;
+  inset: 0;
   color: var(--accent-color);
   background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+  width: clamp(21.313rem, 20.9609rem + 1.5023vw, 22.313rem);
 }
 
-.floppyDialog > .floppy-icon {
+.floppyDialog::backdrop {
+  background-color: black;
+  opacity: 75%;
+ 
+}
+
+
+.floppyDialog > .dialog__content > .floppy-icon {
+  flex-shrink: 0;
   width: 39px;
   height: 39px;
 }
+
+.dialog__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__title {
+  font-family: 'PressStart2P', fantasy;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.submit__dialog {
+  font-family: 'PressStart2P', fantasy;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12.6px;
+  padding: 12.5px 0 12.5px 0;
+  border: 2px solid var(--accent-color);
+  background-color: transparent;
+  text-transform: uppercase;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} 
 
 
 
