@@ -17,7 +17,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--basic-font-family);
   font-weight: var(--font-weight);
   background-image: repeating-linear-gradient(90deg, var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
   repeating-linear-gradient(var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: var(--fantasy-font-family);
   width: clamp(23.438rem, 16.2859rem + 30.5157vw, 43.75rem);
   border: 2px solid var(--accent-color);
   margin: 0 auto;
@@ -42,7 +43,6 @@
 }
 
 .header__title {
-  font-family: 'PressStart2P', fantasy;
   font-weight: 400;
   font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
   line-height: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
@@ -51,7 +51,6 @@
 }
 
 .header__subtitle {
-  font-family: 'PressStart2P', fantasy;
   font-weight: 400;
   font-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
   line-height: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
@@ -65,7 +64,6 @@
 }
 
 .theme-menu__list {
-  font-family: 'PressStart2P', fantasy;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
@@ -81,7 +79,7 @@
   background-color: transparent;
 }
 
-.theme-menu__button:disabled::before{
+.theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
   left: -14px;
@@ -89,17 +87,17 @@
   animation-timing-function: ease-in-out;
 }
 
-.theme-menu__button:disabled{
+.theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
 }
 
-.theme-menu__button:hover{
+.theme-menu__button:hover {
   opacity: 0.6;
   transition-delay: 0.3s;
 }
 
-.theme-menu__button:focus-visible{
+.theme-menu__button:focus-visible {
   opacity: 0.6;
 }
 
@@ -138,6 +136,7 @@
 }
 
 .content__title {
+  font-weight: var(--font-weight-title);
   padding: 3px 10px 3px 10px;
   font-size: 18px;
   line-height: 21.78px;
@@ -151,8 +150,9 @@
 
 .decorate__text {
   position: absolute;
+  z-index: 1;
   top: 25px;
-  right: 25px;
+  right: 4%;
   font-family: 'PressStart2P', fantasy;
   font-weight: 400;
   font-size: 14px;
@@ -179,7 +179,7 @@
 }
 
 .content__text {
-  font-weight: 400;
+  font-weight: var( --font-weight-text);
   font-size: 18px;
   line-height: 21px;
   padding: 25px;
@@ -197,12 +197,9 @@
 }
 
 .card__icon-button {
+  height: 38px;
+  border: 2px solid transparent;
   background-color: transparent;
-  border: none;
-}
-
-.card__like-button, .button__floppy-save {
-  position: relative;
 }
 
 .card__like-button {
@@ -213,14 +210,12 @@
 }
 
 .button__text {
-  position: relative;
   font-family: 'PressStart2P', fantasy;
   font-size: 14px;
   line-height: 12.6px;
-  z-index: 1;
-  color: red;
+  mix-blend-mode: difference;
+  color: var(--button-color-text);
 }
-
 .button__save {
   margin: 0 auto;
   margin-bottom: 100px;
@@ -231,11 +226,20 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-width: 339px;
-  min-height: 55px;
+  width: clamp(19.375rem, 18.7366rem + 2.7238vw, 21.188rem);
+  height: calc(8.688rem - clamp(3.438rem, 2.8000rem + 2.7223vw, 5.25rem));
   background-color: transparent;
   border: 2px solid var(--accent-color);
-  
+}
+
+@media (width <= 375px) {
+  .button__floppy-save {
+      flex-direction: column;
+  }
+}
+
+.button-animation {
+  position: relative;
 }
 
 .button-animation:focus {
@@ -260,13 +264,10 @@
 }
 
 .floppy-icon {
-  width: 21px;
-  height: 21px;
-}
-
-.card__icon-button {
-  height: 38px;
-  border: 2px solid transparent;
+  mix-blend-mode: difference;
+  color: var(--button-color-text);
+  width: calc(3.0629999999999997rem - clamp(1.313rem, 1.1591rem + 0.6565vw, 1.75rem));
+  height: calc(3.0629999999999997rem - clamp(1.313rem, 1.1591rem + 0.6565vw, 1.75rem));
 }
 
 .card__icon-button:focus {
@@ -327,12 +328,9 @@
 
 .like-icon.is-liked {
   transition: 0.3s;
-}
-
-.like-icon.is-liked {
   animation: hearIncrease 0.3s  0.1s;
   animation-timing-function: ease-in;
-} 
+}
 
 .is-liked .sparks {
   animation: sparksOpasity 0.3s  0.3s;
@@ -395,6 +393,34 @@ dialog:not([open]) {
   opacity: 0;
 } 
 
+.brightness-image {
+  filter: brightness(200%);
+}
 
+.contrast-image {
+  filter: contrast(50%);
+}
 
+.blur-image {
+  filter: blur(2rem);
+}
 
+.opacity-image {
+  filter: opacity(0.5);
+}
+
+.grayscale-image {
+  filter: grayscale(0.5);
+}
+
+.image-saturate {
+  filter: saturate(170%);
+}
+
+.image-sepia {
+  filter: sepia(80%);
+}
+
+.many-filters {
+  filter: brightness(150%) opacity(0.9) grayscale(0.8) hue-rotate(90deg);
+}

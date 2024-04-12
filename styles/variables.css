@@ -1,12 +1,16 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --accent-color: #000000;
+    --basic-font-family: 'Inter', sans-serif;
+    --fantasy-font-family: 'PressStart2P', fantasy;
     --background-color: white;
-    --font-weight: 700;
+    --font-weight-title: 700;
+    --font-weight-text: 400;
     --repeat-radiant-color: #d3d3d3;
     --linear-gradient-color-first: #e7e7e7 0.01%;
     --linear-gradient-color-last: #1a1a1a;
     --border-color: var(--accent-color);
     --color-shadow: #FFFFFF;
     --hear-filling: #FF0000;
+    --button-color-text: white;
   }
