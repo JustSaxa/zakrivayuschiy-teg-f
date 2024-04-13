@@ -9,8 +9,8 @@
 :root.theme-light {
     --accent-color: #000000;
     --background-color: white;
-    --font-weight-title: 700;
-    --font-weight-text: 400;
+    --content-weight-title: 700;
+    --content-weight-text: 400;
     --repeat-radiant-color: #d3d3d3;
     --linear-gradient-color-first: #e7e7e7 0.01%;
     --linear-gradient-color-last: #1a1a1a;
@@ -23,8 +23,8 @@
 :root.theme-dark {
     --accent-color: #00CC14;
     --background-color: black;
-    --font-weight-title: 785;
-    --font-weight-text: 465;
+    --content-weight-title: 785;
+    --content-weight-text: 465;
     --repeat-radiant-color: #000;
     --linear-gradient-color-first: #007f0c;
     --linear-gradient-color-last: #004306;
@@ -38,8 +38,8 @@
     :root {
         --accent-color: #00CC14;
         --background-color: black;
-        --font-weight-title: 785;
-        --font-weight-text: 465;
+        --content-weight-title: 785;
+        --content-weight-text: 465;
         --repeat-radiant-color: #000;
         --linear-gradient-color-first: #007f0c;
         --linear-gradient-color-last: #004306;
