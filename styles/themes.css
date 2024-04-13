@@ -9,6 +9,7 @@
 :root.theme-light {
     --accent-color: #000000;
     --background-color: white;
+    --font-weight-text: 400;
     --content-weight-title: 700;
     --content-weight-text: 400;
     --repeat-radiant-color: #d3d3d3;
@@ -23,6 +24,7 @@
 :root.theme-dark {
     --accent-color: #00CC14;
     --background-color: black;
+    --font-weight-text: 400;
     --content-weight-title: 785;
     --content-weight-text: 465;
     --repeat-radiant-color: #000;
@@ -38,6 +40,7 @@
     :root {
         --accent-color: #00CC14;
         --background-color: black;
+        --font-weight-text: 400;
         --content-weight-title: 785;
         --content-weight-text: 465;
         --repeat-radiant-color: #000;
