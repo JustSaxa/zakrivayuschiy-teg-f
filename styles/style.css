@@ -47,7 +47,7 @@
   margin-bottom: 100px;
 }
 
-.header__title {
+.header__link {
   font-weight: var(--font-weight-text);
   font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
   line-height: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
@@ -55,7 +55,7 @@
   padding-bottom: 20px;
 }
 
-.header__subtitle {
+.header__title {
   font-weight: var(--font-weight-text);
   font-size: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
   line-height: clamp(0.875rem, 0.6768rem + 0.8458vw, 1.438rem);
