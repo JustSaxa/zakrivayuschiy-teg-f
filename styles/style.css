@@ -19,8 +19,7 @@
   min-block-size: 100dvb;
   font-family: var(--basic-font-family);
   font-variation-settings: "whgt" var(--content-text-wght);
-  background-image: repeating-linear-gradient(90deg, var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
-  repeating-linear-gradient(var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
+  background-image: repeating-linear-gradient(90deg, var(--repeat-radiant-color) 0 2px, transparent 2px 4px), repeating-linear-gradient(var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
       linear-gradient(var(--linear-gradient-color-first), #1a1a1a);
   background-size: cover;
   background-attachment: fixed;
@@ -65,7 +64,7 @@
 }
 
 .theme-menu {
-  padding-left: calc(1.875rem - clamp(0.625rem, 0.4049rem + 0.9390vw, 1.25rem));
+  padding-left: calc(1.875rem - clamp(0.625rem, 0.4049rem + 0.939vw, 1.25rem));
 }
 
 .theme-menu__item {
