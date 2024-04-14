@@ -14,15 +14,13 @@
 
 */
 
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--basic-font-family);
   font-variation-settings: "whgt" var(--content-text-wght);
-  background-image: repeating-linear-gradient(90deg, var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
-  repeating-linear-gradient(var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
-  linear-gradient(var(--linear-gradient-color-first), #1a1a1a);
+  background-image: repeating-linear-gradient(90deg, var(--repeat-radiant-color) 0 2px, transparent 2px 4px), repeating-linear-gradient(var(--repeat-radiant-color) 0 2px, transparent 2px 4px),
+      linear-gradient(var(--linear-gradient-color-first), #1a1a1a);
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--background-color);
@@ -35,7 +33,6 @@
       font-family: var(--basic-font-family);
   }
 }
-
 
 .header {
   display: flex;
@@ -75,7 +72,6 @@
   font-weight: var(--font-weight-text);
   font-size: 14px;
   line-height: 14px;
-
 }
 
 .theme-menu__item:not(:last-child) {
@@ -90,7 +86,7 @@
 }
 
 .theme-menu__button:disabled::before {
-  content: '▶';
+  content: "▶";
   position: absolute;
   left: -14px;
   animation: moveArrow 0.5s infinite alternate;
@@ -112,14 +108,13 @@
 }
 
 .theme-menu__button::after {
-  content: '';
+  content: "";
   display: block;
   width: 0%;
   height: 2px;
   margin-top: -1px;
   background-color: currentColor;
   transition: width 0.3s;
-
 }
 
 .theme-menu__button:focus-visible::after {
@@ -130,7 +125,6 @@
   opacity: 0.6;
   outline: none;
 }
-
 
 .content {
   display: flex;
@@ -171,22 +165,54 @@
   mix-blend-mode: hard-light;
   opacity: 50%;
   color: currentColor;
-  text-shadow: 1px 1px var(--color-shadow);
+  text-shadow: 0.5px 0.5px var(--color-shadow);
 }
 
-@supports((text-stroke: 0.5px var(--color-shadow)) or (-webkit-text-stroke: 0.5px var(--color-shadow))) {
+@supports ((text-stroke: 0.5px var(--color-shadow)) or (-webkit-text-stroke: 0.5px var(--color-shadow))) {
   .decorate__text {
       -webkit-text-stroke: 0.5px var(--color-shadow);
       text-stroke: 0.5px var(--color-shadow);
       text-shadow: none;
   }
-} 
+}
 
 .image-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.brightness-image {
+  filter: brightness(200%);
+}
+
+.contrast-image {
+  filter: contrast(50%);
+}
+
+.blur-image {
+  filter: blur(2rem);
+}
+
+.opacity-image {
+  filter: opacity(0.5);
+}
+
+.grayscale-image {
+  filter: grayscale(0.5);
+}
+
+.image-saturate {
+  filter: saturate(170%);
+}
+
+.image-sepia {
+  filter: sepia(80%);
+}
+
+.many-filters {
+  filter: brightness(150%) opacity(0.9) grayscale(0.8) hue-rotate(90deg);
 }
 
 .content__text {
@@ -231,8 +257,9 @@
   mix-blend-mode: difference;
   color: var(--button-color-text);
 }
-.button__save {
-  margin: 0 auto;
+
+.footer__button-save {
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -241,9 +268,10 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin: 0 auto;
   width: clamp(19.375rem, 18.7366rem + 2.7238vw, 21.188rem);
-  height: calc(8.688rem - clamp(3.438rem, 2.8000rem + 2.7223vw, 5.25rem));
-  background-color: transparent;
+  height: calc(8.688rem - clamp(3.438rem, 2.8rem + 2.7223vw, 5.25rem));
+  background-color: var(--background-color);
   border: 2px solid var(--accent-color);
 }
 
@@ -265,14 +293,14 @@
 }
 
 .button-animation::before {
-  content:'';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	background: var(--accent-color);
-	transition: 0.5s ease-in-out;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--accent-color);
+  transition: 0.5s ease-in-out;
 }
 
 .button-animation:hover::before {
@@ -287,7 +315,7 @@
 }
 
 .card__icon-button:focus {
-  outline:none;
+  outline: none;
 }
 
 .card__icon-button:focus-visible {
@@ -319,43 +347,43 @@
 
 .like-icon:active .core {
   transition: 0.3s linear;
-  fill: var( --hear-filling);
+  fill: var(--hear-filling);
 }
 
 .like-icon:active .main-body {
   transition: 0.5s linear 0.05s;
-  fill: var( --hear-filling);
+  fill: var(--hear-filling);
 }
 
 .like-icon.is-liked .contour {
   transition: 0.3s linear 0.06s;
-  fill: var( --hear-filling);
+  fill: var(--hear-filling);
 }
 
 .like-icon.is-liked .core {
   transition: 0.3s linear;
-  fill: var( --hear-filling);
+  fill: var(--hear-filling);
 }
 
 .like-icon.is-liked .main-body {
   transition: 0.3s linear 0.06s;
-  fill: var( --hear-filling);
+  fill: var(--hear-filling);
 }
 
 .like-icon.is-liked {
   transition: 0.3s;
-  animation: hearIncrease 0.3s  0.1s;
+  animation: hearIncrease 0.3s 0.1s;
   animation-timing-function: ease-in;
 }
 
 .is-liked .sparks {
-  animation: sparksOpasity 0.3s  0.3s;
+  animation: sparksOpasity 0.3s 0.3s;
   animation-timing-function: ease-in;
 }
 
 .contour:not(.is-liked) {
   transition: 0.1s linear;
-  fill: var( --accent-color);
+  fill: var(--accent-color);
 }
 
 .floppyDialog {
@@ -374,9 +402,7 @@
 .floppyDialog::backdrop {
   background-color: black;
   opacity: 75%;
- 
 }
-
 
 .floppyDialog > .dialog__content > .floppy-icon {
   flex-shrink: 0;
@@ -412,36 +438,4 @@
 dialog:not([open]) {
   pointer-events: none;
   opacity: 0;
-} 
-
-.brightness-image {
-  filter: brightness(200%);
-}
-
-.contrast-image {
-  filter: contrast(50%);
-}
-
-.blur-image {
-  filter: blur(2rem);
-}
-
-.opacity-image {
-  filter: opacity(0.5);
-}
-
-.grayscale-image {
-  filter: grayscale(0.5);
-}
-
-.image-saturate {
-  filter: saturate(170%);
-}
-
-.image-sepia {
-  filter: sepia(80%);
-}
-
-.many-filters {
-  filter: brightness(150%) opacity(0.9) grayscale(0.8) hue-rotate(90deg);
 }
