@@ -15,11 +15,71 @@
 
 @keyframes moveArrow {
     0% {
-      left: -17px;
+      left: -19px;
     }
     100% {
-      left: -13px;
+      left: -15px;
     }
+  }
+
+  .sparks {
+    opacity: 0;
+  }
+  
+  .core {
+    transition: 0.3s linear 0.03s;
+  }
+  
+  .like-icon:hover .core {
+    transition: 0.3s linear;
+    fill: var(--accent-color);
+  }
+  
+  .main-body {
+    transition: 0.3s linear;
+  }
+  
+  .like-icon:hover .main-body {
+    transition: 0.5s linear 0.05s;
+    fill: var(--accent-color);
+  }
+  
+  .like-icon:active .core {
+    transition: 0.3s linear;
+    fill: var(--hear-filling);
+  }
+  
+  .like-icon:active .main-body {
+    transition: 0.5s linear 0.05s;
+    fill: var(--hear-filling);
+  }
+  
+  .like-icon.is-liked .contour {
+    transition: 0.3s linear 0.06s;
+    fill: var(--hear-filling);
+  }
+  
+  .like-icon.is-liked .core {
+    transition: 0.3s linear;
+    fill: var(--hear-filling);
+  }
+  
+  .like-icon.is-liked .main-body {
+    transition: 0.3s linear 0.05s;
+    fill: var(--hear-filling);
+  }
+  
+  .like-icon.is-liked {
+    animation: hearIncrease 0.3s 0.1s ease-in alternate;
+  }
+  
+  .is-liked .sparks {
+    animation: sparksOpasity 0.3s 0.3s ease-in alternate;
+  }
+  
+  .contour:not(.is-liked) {
+    transition: 0.1s linear;
+    fill: var(--accent-color);
   }
 
   @keyframes hearIncrease {
